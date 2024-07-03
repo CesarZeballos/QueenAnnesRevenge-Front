@@ -1,0 +1,17 @@
+{
+    "workbench.colorCustomizations": {
+      "titleBar.activeBackground": "#A51B17",
+      "titleBar.activeForeground": "#F3E3C4",
+      "titleBar.inactiveBackground": "#A51B17",
+      "titleBar.inactiveForeground": "#F3E3C4",
+      "statusBar.background": "#F3E3C4",
+    "statusBar.foreground": "#50412E",
+    "activityBar.background": "#50412E",
+    "activityBar.foreground": "#E8CEA6",
+    // "editor.background": "#1E1E1E",
+    // "editor.foreground": "#D4D4D4"
+},
+"prettier.singleQuote": true,
+"prettier.trailingComma": "all",
+"prettier.tabWidth": 4
+}
