@@ -8,11 +8,30 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        background: "#F3E3C4",
+        lightBrown: "#736758",
+        darkBrown: "#50412E",
+        lightBoard: "#A51B17",
+        darkBoard: "#841612",
+        lightBeige: "#E8CEA6",
+        darkBeige: "#D1B995"
       },
+
+      fontFamily: {
+        kalam: ["Kalam", "sans-serif"],
+        lato: ["Lato", "sans-serif"]
+      },
+
+      spacing: {
+        'small': '1rem',
+        'medium': '3.5rem',
+        'large': '7.5rem'
+      },
+      
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      }
     },
   },
   plugins: [],
