@@ -23,6 +23,12 @@ const config: Config = {
         lato: ["Lato", "sans-serif"]
       },
 
+      fontSize: {
+        'small': '1rem',
+        'medium': '2rem',
+        'large': '2.5rem'
+      },
+
       spacing: {
         'small': '1rem',
         'medium': '3.5rem',
