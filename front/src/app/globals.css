@@ -47,5 +47,5 @@ body {
 }
 
 .container {
-  @apply bg-lightBeige py-9 px-6 rounded-md
+  @apply bg-lightBeige py-9 px-2 rounded-md
 }
