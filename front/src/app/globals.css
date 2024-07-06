@@ -49,3 +49,8 @@ body {
 .container {
   @apply bg-lightBeige py-9 px-2 rounded-md
 }
+
+.item{
+  @apply text-darkBrown rounded-full px-4 w-full mt-1 cursor-pointer
+  hover:bg-darkBeige
+}

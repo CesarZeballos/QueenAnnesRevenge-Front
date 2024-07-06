@@ -24,12 +24,19 @@ const recipesArray: IRecipe[] = [
 const Recipes: React.FC = () => {
     const [section, setSection] = useState("active");
     const [recipes, setRecipes] = useState<IRecipe[]>([]);
+    const [recipeId, setRecipeId] = useState(1);
 
     useEffect(()=> {
         console.log(section)
         const recipes = recipesArray.filter(recipe => recipe.state === section);
         setRecipes(recipes);
     }, [section])
+
+    useEffect(()=> {
+        console.log(recipeId)
+        const recipe = recipesArray.find(recipe => recipe.id === recipeId);
+        console.log(recipe)
+    }, [recipeId])
 
     return (
         <div className="marginContainer">
@@ -47,7 +54,9 @@ const Recipes: React.FC = () => {
                     <h2 className="header2">Recipes {section}</h2>
                     <div>
                         {recipes.map((recipe: IRecipe) => (
-                            <RecipeCardList key={recipe.id} data={recipe} />
+                            <button key={recipe.id} className={`item ${recipe.id === recipeId ? 'bg-darkBeige' : 'item'}`} onClick={() => setRecipeId(recipe.id)}>
+                                <RecipeCardList key={recipe.id} data={recipe} />
+                            </button>
                         ))}
                     </div>
                 </ItemContainer>
