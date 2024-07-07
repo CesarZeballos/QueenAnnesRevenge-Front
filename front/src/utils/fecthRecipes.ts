@@ -1,7 +1,5 @@
 import { IRecipe } from "@/interfaces/interfacesRecipes";
-
-const APIURL = "http://127.0.0.1:5147"
-
+const APIURL = process.env.NEXT_PUBLIC_API_URL
 export const getRecipes = async () => {
     try {
         const response = await fetch(`${APIURL}/recipes`)
