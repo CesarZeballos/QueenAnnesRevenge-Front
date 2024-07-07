@@ -1,8 +1,13 @@
-const Recipes = () => {
+import { DashboardRecipes } from "@/components/dashboardRecipes";
+import { getRecipes } from "@/utils/fecthRecipes";
+
+const Recipes: React.FC = async () => {
+    const recipesData = await getRecipes();
+
     return (
-        <div className="marginContainer">
-            <h1 className="header1">recipes</h1>
-        </div>
+        <>
+            <DashboardRecipes recipesData={recipesData}/>
+        </>
     )
 }
 

@@ -11,37 +11,46 @@ body {
 }
 
 .textBody {
-  @apply font-lato text-small
+  @apply font-lato text-small text-darkBrown
 }
 
 .textBodyBold {
-  @apply font-lato text-small font-bold
+  @apply font-lato text-small font-bold text-darkBrown
 }
 
 .header1 {
-  @apply font-kalam text-large
+  @apply font-kalam text-large text-darkBrown
 }
 
 .header2 {
-  @apply font-kalam text-medium
+  @apply font-kalam text-medium text-darkBrown
 }
 
 .buttonPrimary{
-  @apply bg-lightBoard text-background rounded-full font-lato text-small px-8 py-3
+  @apply bg-lightBoard text-background rounded-full font-lato text-small px-8 py-2
   hover:bg-darkBoard
 }
 
 .buttonSecondary{
-  @apply bg-lightBeige text-darkBrown rounded-full font-lato text-small px-8 py-3
+  @apply bg-lightBeige text-darkBrown rounded-full font-lato text-small px-8 py-2
   hover:bg-darkBeige
 }
 
 .buttonNotBg{
-  @apply text-darkBrown rounded-full font-lato text-small px-8 py-3
+  @apply text-darkBrown rounded-full font-lato text-small px-8 py-2
+  hover:bg-darkBeige
   hover:text-lightBrown
-  hover:bg-lightBeige
 }
 
 .iconContainer{
   @apply flex flex-row gap-2
+}
+
+.container {
+  @apply bg-lightBeige py-9 px-2 rounded-md
+}
+
+.item{
+  @apply text-darkBrown rounded-full px-4 w-full mt-1 cursor-pointer
+  hover:bg-darkBeige
 }
