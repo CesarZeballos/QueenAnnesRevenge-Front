@@ -1,6 +1,6 @@
 import { IRecipe } from "@/interfaces/interfacesRecipes";
 
-const APIURL = "http://localhost:5147"
+const APIURL = "http://127.0.0.1:5147"
 
 export const getRecipes = async () => {
     try {
