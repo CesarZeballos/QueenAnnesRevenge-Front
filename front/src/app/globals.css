@@ -54,3 +54,7 @@ body {
   @apply text-darkBrown rounded-full px-4 w-full mt-1 cursor-pointer
   hover:bg-darkBeige
 }
+
+.input{
+  @apply bg-lightBeige border border-darkBrown rounded-md px-3
+}

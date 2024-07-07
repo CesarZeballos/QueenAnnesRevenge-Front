@@ -44,6 +44,7 @@ export const DashboardRecipes = ({recipesData}: {recipesData: IRecipe[]}) => {
         <div className="marginContainer">
             <DashboardContainer>
                 <ItemContainer>
+                    <h2 className="header2">Recipes</h2>
                     <button className="buttonSecondary" onClick={event => setSection("active")}>Recipes actives</button>
                     <button className="buttonSecondary" onClick={event => setSection("disabled")}>Recipes incatives</button>
                     <ButtonIcon href="/newRecipe">
