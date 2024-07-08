@@ -35,6 +35,18 @@ export const RecipeForm = () => {
         });
     }
 
+    const handleNext = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const errorInForm = validateForm(dataForm);
+        setError(errorInForm);
+        if (Object.keys(errorInForm).length === 0) {
+            setSection("macerated");
+        } else {
+            alert ("there are errors in the form");
+        }
+    }
+
     return (
         <form>
             <ItemContainer>
@@ -54,9 +66,9 @@ export const RecipeForm = () => {
                 <div className="flex flex-row gap-1">
                     <label className="textBody">nickname: </label>
                     <input type="text"
-                    name="name"
+                    name="nickname"
                     value={dataForm.nickname}
-                    placeholder="031"
+                    placeholder="Original"
                     className="input"
                     onChange={handleChange}
                     required/>
@@ -64,15 +76,44 @@ export const RecipeForm = () => {
                 </div>
 
                 <div className="flex flex-row gap-1">
-                    <label className="textBody">nickname: </label>
-                    <input type="text"
-                    name="name"
-                    value={dataForm.nickname}
-                    placeholder="031"
+                    <label className="textBody">abv macerated: </label>
+                    <input type="number"
+                    name="abvMacerated"
+                    value={dataForm.abvMacerated}
+                    placeholder="0.9"
                     className="input"
+                    max="1"
+                    min="0.01"
                     onChange={handleChange}
                     required/>
-                    {error.nickname ? (<p className="textBody">{error.nickname}</p>) : (<br/>)}
+                    {error.abvMacerated ? (<p className="textBody">{error.abvMacerated}</p>) : (<br/>)}
+                </div>
+
+                <div className="flex flex-row gap-1">
+                    <label className="textBody">abv gin: </label>
+                    <input type="number"
+                    name="abvGin"
+                    value={dataForm.abvGin}
+                    placeholder="0.4"
+                    className="input"
+                    max="1"
+                    min="0.01"
+                    onChange={handleChange}
+                    required/>
+                    {error.abvGin ? (<p className="textBody">{error.abvGin}</p>) : (<br/>)}
+                </div>
+
+                <div className="flex flex-row gap-1">
+                    <label className="textBody">time macerated: </label>
+                    <input type="number"
+                    name="time"
+                    value={dataForm.time}
+                    placeholder="1"
+                    className="input"
+                    onChange={handleChange}
+                    min="1"
+                    required/>
+                    {error.time ? (<p className="textBody">{error.time}</p>) : (<br/>)}
                 </div>
 
             </ItemContainer>
