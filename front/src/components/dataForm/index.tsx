@@ -2,6 +2,7 @@
 import { IRecipeForm } from "@/interfaces/interfacesRecipes";
 import { useEffect, useState } from "react";
 import ItemContainer from "../itemContainer";
+import { postRecipe } from "@/utils/fecthRecipes";
 
 export const DataForm: React.FC = () => {
     const [formData, setFormData] = useState<IRecipeForm>({
@@ -40,88 +41,98 @@ export const DataForm: React.FC = () => {
             [name]: value
         });
     }
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        await postRecipe(formData);
+    }
     
     return (
-        <div>
-            <div>
-                <h1 className="header2 text-center">Botanics</h1>
-                <div className="flex flex-row gap-9">
-                    <ItemContainer>
-                        <h2 className="textBodyBold text-center">macerated</h2>
-                        {formData.macerated.map(botanic => (
-                            <div key={botanic.name} className="flex flex-row gap-2">
-                                <p className="textBody w-full">{botanic.name}</p>
-                                <p className="textBody w-full">{botanic.size} g</p>
-                            </div>
-                        ))}
-                    </ItemContainer>
-                    <ItemContainer>
-                        <h2 className="textBodyBold text-center">vape</h2>
-                        {formData.vape.map(botanic => (
-                            <div key={botanic.name} className="flex flex-row gap-2">
-                                <p className="textBody w-full">{botanic.name}</p>
-                                <p className="textBody w-full">{botanic.size} g</p>
-                            </div>
-                        ))}
-                    </ItemContainer>
-                </div>
-            </div>
-            <div>
-                <h2 className="textBodyBold text-center">Data</h2>
-            </div>
+        <form>
             <ItemContainer>
-                <div className="grid grid-cols-2 gap-4">
-                    <label className="textBody text-end">Name:</label>
-                    <input type="text"
-                    value={formData.name}
-                    onChange={handleChange}
-                    name="name"
-                    className="input"
-                    required
-                    />
+                <div>
+                    <h1 className="header2 text-center">Botanics</h1>
+                    <div className="flex flex-row gap-9">
+                        <ItemContainer>
+                            <h2 className="textBodyBold text-center">macerated</h2>
+                            {formData.macerated.map(botanic => (
+                                <div key={botanic.name} className="flex flex-row gap-2">
+                                    <p className="textBody w-full">{botanic.name}</p>
+                                    <p className="textBody w-full">{botanic.size} g</p>
+                                </div>
+                            ))}
+                        </ItemContainer>
+                        <ItemContainer>
+                            <h2 className="textBodyBold text-center">vape</h2>
+                            {formData.vape.map(botanic => (
+                                <div key={botanic.name} className="flex flex-row gap-2">
+                                    <p className="textBody w-full">{botanic.name}</p>
+                                    <p className="textBody w-full">{botanic.size} g</p>
+                                </div>
+                            ))}
+                        </ItemContainer>
+                    </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                    <label className="textBody text-end">Nickname:</label>
-                    <input type="text"
-                    value={formData.nickname}
-                    onChange={handleChange}
-                    name="nickname"
-                    className="input"
-                    required
-                    />
+                <div>
+                    <h2 className="textBodyBold text-center">Data</h2>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                    <label className="textBody text-end">macerated time:</label>
-                    <input type="text"
-                    value={formData.time}
-                    onChange={handleChange}
-                    name="time"
-                    className="input"
-                    required
-                    />
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                    <label className="textBody text-end">abv gin:</label>
-                    <input type="text"
-                    value={formData.abvGin}
-                    onChange={handleChange}
-                    name="abvGin"
-                    className="input"
-                    required
-                    />
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                    <label className="textBody text-end">abv macerated:</label>
-                    <input type="text"
-                    value={formData.abvMacerated}
-                    onChange={handleChange}
-                    name="abvMacerated"
-                    className="input"
-                    required
-                    />
+                <ItemContainer>
+                    <div className="grid grid-cols-2 gap-4">
+                        <label className="textBody text-end">Name:</label>
+                        <input type="text"
+                        value={formData.name}
+                        onChange={handleChange}
+                        name="name"
+                        className="input"
+                        required
+                        />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                        <label className="textBody text-end">Nickname:</label>
+                        <input type="text"
+                        value={formData.nickname}
+                        onChange={handleChange}
+                        name="nickname"
+                        className="input"
+                        required
+                        />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                        <label className="textBody text-end">macerated time:</label>
+                        <input type="text"
+                        value={formData.time}
+                        onChange={handleChange}
+                        name="time"
+                        className="input"
+                        required
+                        />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                        <label className="textBody text-end">abv gin:</label>
+                        <input type="text"
+                        value={formData.abvGin}
+                        onChange={handleChange}
+                        name="abvGin"
+                        className="input"
+                        required
+                        />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                        <label className="textBody text-end">abv macerated:</label>
+                        <input type="text"
+                        value={formData.abvMacerated}
+                        onChange={handleChange}
+                        name="abvMacerated"
+                        className="input"
+                        required
+                        />
+                    </div>
+                </ItemContainer>
+                <div>
+                    <button type="submit" className="buttonPrimary">add recipe</button>
                 </div>
             </ItemContainer>
-        </div>
+        </form>
     )
 }
 

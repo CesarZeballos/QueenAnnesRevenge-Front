@@ -51,13 +51,13 @@ export const BotanicForm: React.FC = () => {
     }
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+        // event.preventDefault();
         const botanicArray = []
-        if (botanic.name !== "" || botanic.size !== 0) {
-            addBotanic()
-        }
         for (let i = 0; i < botanics.length; i++) {
             botanicArray.push({ name: botanics[i].name, size: botanics[i].size })
+        }
+        if (botanic.name !== "" || botanic.size !== 0) {
+            botanicArray.push({ name: botanic.name, size: botanic.size })
         }
         localStorage.setItem(`${titleBotanic}`, JSON.stringify(botanicArray))
         setBotanics([])
