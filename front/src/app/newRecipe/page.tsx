@@ -1,6 +1,7 @@
 import DashboardContainer from "@/components/dashboardContainer"
 import ItemContainer from "@/components/itemContainer"
-import { RecipeForm } from "@/components/recipeForm"
+import RecipeForm from "@/components/recipeForm"
+import { FormProvider } from "../../utils/formContext"
 import Link from "next/link"
 
 const NewRecipe: React.FC = () => {
@@ -14,7 +15,9 @@ const NewRecipe: React.FC = () => {
                 </ItemContainer>
 
                 <ItemContainer className="col-span-3">
-                    <RecipeForm />
+                    <FormProvider>
+                        <RecipeForm />
+                    </FormProvider>
                 </ItemContainer>
             </DashboardContainer>
 

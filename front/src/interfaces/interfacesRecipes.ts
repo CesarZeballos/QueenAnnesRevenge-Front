@@ -19,6 +19,7 @@ export enum RecipeState {
     disabled = "disabled"
 }
 
+//interfaces para forms
 export interface IRecipeForm {
     name: string,
     nickname: string,
@@ -37,4 +38,10 @@ export interface IRecipeFormError {
     abvMacerated?: string,
     time?: string,
     abvGin?: string
+}
+
+export interface IBotanicForm {
+    id: number,
+    name: string,
+    size: number
 }
