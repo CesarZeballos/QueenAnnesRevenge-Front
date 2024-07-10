@@ -3,8 +3,10 @@ import { IRecipeForm } from "@/interfaces/interfacesRecipes";
 import { useEffect, useState } from "react";
 import ItemContainer from "../itemContainer";
 import { postRecipe } from "@/utils/fecthRecipes";
+import { useRouter } from "next/navigation";
 
 export const DataForm: React.FC = () => {
+    const router = useRouter()
     const [formData, setFormData] = useState<IRecipeForm>({
         name: "",
         nickname: "",
@@ -44,11 +46,15 @@ export const DataForm: React.FC = () => {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        await postRecipe(formData);
+        const data = formData;
+        console.log(data)
+        await postRecipe(data);
+        localStorage.clear();
+        router.push("/recipes")
     }
     
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <ItemContainer>
                 <div>
                     <h1 className="header2 text-center">Botanics</h1>

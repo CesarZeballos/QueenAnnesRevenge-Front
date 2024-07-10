@@ -34,10 +34,8 @@ export const DashboardRecipes = ({recipesData}: {recipesData: IRecipe[]}) => {
 
     useEffect(()=> {
         const recipe = recipes.find(recipe => recipe.id === recipeId);
-        console.log("receta filtrada", recipe);
         if(!recipe) return;
         setRecipeInfo(recipe);
-        console.log("receta seteada", recipeInfo);
     }, [recipeId])
 
     return (

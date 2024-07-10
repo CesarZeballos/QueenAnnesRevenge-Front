@@ -2,7 +2,7 @@ import { IRecipeForm } from "@/interfaces/interfacesRecipes";
 const APIURL = process.env.NEXT_PUBLIC_API_URL
 export const getRecipes = async () => {
     try {
-        const response = await fetch(`${APIURL}/recipes`)
+        const response = await fetch(`http://localhost:5147/recipes`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -11,12 +11,17 @@ export const getRecipes = async () => {
     }
 }
 
-export const postRecipe = async (recipe: IRecipeForm) => {
+export async function postRecipe(recipe: IRecipeForm) {
     try {
-        const response = await fetch(`${APIURL}/recipes/schedule`, {
+        const response = await fetch(`http://localhost:5147/recipes/schedule`, {
             method: "POST",
-        body: JSON.stringify(recipe)
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(recipe)
     });
+    const data = await response.json();
+    console.log(data)
     alert("recipe added")
     } catch (error) {
         console.log("error al registrar receta.", error);
