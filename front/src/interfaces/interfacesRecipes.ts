@@ -21,15 +21,19 @@ export enum RecipeState {
     disabled = "disabled"
 }
 
+export interface IRecipesProps {
+    recipesBack: IRecipe[]
+}
+
 //interfaces para forms
 export interface IRecipeForm {
     name: string,
     nickname: string,
     vape: IBotanic[],
     macerated: IBotanic[],
-    abvMacerated: number,
-    time: number,
-    abvGin: number
+    abvMacerated: string,
+    time: string,
+    abvGin: string
 }
 
 export interface IBotanicForm {

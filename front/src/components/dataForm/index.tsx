@@ -10,9 +10,9 @@ export const DataForm: React.FC = () => {
     const [formData, setFormData] = useState<IRecipeForm>({
         name: "",
         nickname: "",
-        time: 0,
-        abvGin: 0,
-        abvMacerated: 0,
+        time: "",
+        abvGin: "",
+        abvMacerated: "",
         macerated: [],
         vape: []
     })
@@ -105,7 +105,7 @@ export const DataForm: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                         <label className="textBody text-end">macerated time:</label>
-                        <input type="text"
+                        <input type="number"
                         value={formData.time}
                         onChange={handleChange}
                         name="time"
@@ -115,7 +115,7 @@ export const DataForm: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                         <label className="textBody text-end">abv gin:</label>
-                        <input type="text"
+                        <input type="number"
                         value={formData.abvGin}
                         onChange={handleChange}
                         name="abvGin"
@@ -125,7 +125,7 @@ export const DataForm: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                         <label className="textBody text-end">abv macerated:</label>
-                        <input type="text"
+                        <input type="number"
                         value={formData.abvMacerated}
                         onChange={handleChange}
                         name="abvMacerated"

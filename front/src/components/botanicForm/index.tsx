@@ -82,13 +82,9 @@ export const BotanicForm: React.FC = () => {
         event.preventDefault();
         if (botanic.name === "" || botanic.size === "") {
             setLocalStorage()
-        } else 
-        
-        // if (botanic.name !== "" || botanic.size !== "") 
-        {
+        } else {
             setBotanics([...botanics, botanic])
             setLocalStorage()
-            // botanicData.push({ Bid: botanics.length + 1, name: botanic.name, size: JSON.parse(botanic.size) })
         } 
         setBotanics([])
         goToNextSection()

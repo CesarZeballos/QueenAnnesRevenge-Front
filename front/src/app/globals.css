@@ -29,6 +29,7 @@ body {
 .buttonPrimary{
   @apply bg-lightBoard text-background rounded-full font-lato text-small px-8 py-2
   hover:bg-darkBoard
+  disabled:bg-gray-500
 }
 
 .buttonSecondary{
