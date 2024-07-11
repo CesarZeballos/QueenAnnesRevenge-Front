@@ -1,3 +1,4 @@
+//interfaces basicas
 export interface IRecipe {
     id: number,
     name: string,
@@ -10,6 +11,7 @@ export interface IRecipe {
     state: RecipeState
 }
 export interface IBotanic {
+    Bid: number,
     name: string,
     size: number
 }
@@ -30,6 +32,13 @@ export interface IRecipeForm {
     abvGin: number
 }
 
+export interface IBotanicForm {
+    Bid: number,
+    name: string,
+    size: string
+}
+
+//interfaces para validaciones
 export interface IRecipeFormError {
     name?: string,
     nickname?: string,
@@ -40,8 +49,7 @@ export interface IRecipeFormError {
     abvGin?: string
 }
 
-export interface IBotanicForm {
-    id: number,
-    name: string,
-    size: number
+export interface IBotanicFormError {
+    name?: string,
+    size?: string
 }

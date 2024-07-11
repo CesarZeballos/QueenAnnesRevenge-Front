@@ -25,7 +25,7 @@ export const RecipeInfo: React.FC<{recipeData: IRecipe}> = ({recipeData}) => {
         <div>
             <div className="flex flex-row gap-2 items-center justify-center">
                 <h1 className="header1">{data.name}</h1>
-                <circle className="w-2 h-2 bg-darkBrown rounded" />
+                {/* <circle className="w-2 h-2 bg-darkBrown rounded"/> */}
                 <h2 className="header2">{data.nickname}</h2>
             </div>
             <h2 className="textBodyBold text-center">Ingredients</h2>
@@ -33,7 +33,7 @@ export const RecipeInfo: React.FC<{recipeData: IRecipe}> = ({recipeData}) => {
             <ItemContainer>
                 <h3 className="textBody">Macerated</h3>
                 {data.macerated.map(botanic => (
-                    <div key={name!} className="flex flex-row gap-2 w-full">
+                    <div key={botanic.Bid} className="flex flex-row gap-2 w-full">
                         <p className="textBodyBold">{botanic.size} g</p>
                         <p className="textBody"> {botanic.name}</p>
                     </div>
@@ -42,7 +42,7 @@ export const RecipeInfo: React.FC<{recipeData: IRecipe}> = ({recipeData}) => {
             <ItemContainer>
                 <h3 className="textBody">Vape</h3>
                 {data.vape.map(botanic => (
-                    <div key={name!} className="flex flex-row gap-2 w-full">
+                    <div key={botanic.Bid} className="flex flex-row gap-2 w-full">
                         <p className="textBodyBold">{botanic.size} g</p>
                         <p className="textBody"> {botanic.name}</p>
                     </div>

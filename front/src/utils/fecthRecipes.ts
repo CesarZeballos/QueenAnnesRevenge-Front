@@ -2,7 +2,14 @@ import { IRecipeForm } from "@/interfaces/interfacesRecipes";
 const APIURL = process.env.NEXT_PUBLIC_API_URL
 export const getRecipes = async () => {
     try {
-        const response = await fetch(`http://localhost:5147/recipes`);
+        const response = await fetch(`http://localhost:5147/recipes`, {
+            method: "GET",
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '20',
+              },
+        });
         const data = await response.json();
         return data;
     } catch (error) {

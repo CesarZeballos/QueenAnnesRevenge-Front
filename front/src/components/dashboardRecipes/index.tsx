@@ -58,7 +58,7 @@ export const DashboardRecipes = ({recipesData}: {recipesData: IRecipe[]}) => {
                         <div>
                             {recipes.map((recipe: IRecipe) => (
                                 <div key={recipe.id} className={`item ${recipe.id === recipeId ? 'bg-darkBeige' : 'item'}`} onClick={() => setRecipeId(recipe.id)}>
-                                    <RecipeCardList key={recipe.id} data={recipe} />
+                                    <RecipeCardList data={recipe} />
                                 </div>
                             ))}
                         </div>
